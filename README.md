@@ -16,7 +16,6 @@ First, install dependencies (for python 3.8.10)
 
 ```bash
 # install project   
-cd exploring_event_ssl
 pip install -r requirements.txt
  ```
 The datasets must be placed in `data/`

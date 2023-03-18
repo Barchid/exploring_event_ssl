@@ -24,7 +24,7 @@ Conference
 
 ## How to run
 
-First, install dependencies
+First, install dependencies (for python 3.8.10)
 
 ```bash
 # clone project   

@@ -23,7 +23,7 @@ class DailyActionDVS(Dataset):
         target_transform (callable, optional): A callable of transforms to apply to the targets/labels.
     """
 
-    base_url = "https://nextcloud.univ-lille.fr/index.php/s/DyAXqJyqeRL4kyD/download"
+    base_url = "https://drive.google.com/drive/folders/1JrYJnikaJdiNgq5Zz5pwbN-nwns-NNpz?usp=sharing"
     filename = "DailyAction-DVS.zip"
     base_folder = "DailyAction-DVS"
     file_md5 = "99adac8babb1f613a1e1c66232519348"
@@ -62,7 +62,7 @@ class DailyActionDVS(Dataset):
                 WARNING: this dataset is available from Google Drive and must be downloaded manually.
                 Please download and extract the zip file ( {self.url} ) and place it in {self.location_on_system}."""
             )
-            download_and_extract_archive(self.base_url, self.location_on_system, filename=self.filename, md5=self.file_md5)
+            # download_and_extract_archive(self.base_url, self.location_on_system, filename=self.filename, md5=self.file_md5)
             exit()
 
         file_path = os.path.join(self.location_on_system, self.base_folder)

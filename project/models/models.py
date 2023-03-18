@@ -108,7 +108,7 @@ class ConvEnc(nn.Module):
             functional.reset_net(self.encoder)
             x = x.permute(1, 0, 2, 3, 4)  # from (B,T,C,H,W) to (T, B, C, H, W)
         elif self.mode == "3dcnn":
-            x = x.permute(1, 2, 0, 3, 4)  # from (T,B,C,H,W) to (B,C,T,H,W)
+            x = x.permute(0, 2, 1, 3, 4)  # from (T,B,C,H,W) to (B,C,T,H,W)
         elif self.mode == "cnn" and len(x.shape) == 5:
             x = rearrange(
                 x,

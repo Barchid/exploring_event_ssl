@@ -112,7 +112,7 @@ class ConvEnc(nn.Module):
         elif self.mode == "cnn" and len(x.shape) == 5:
             x = rearrange(
                 x,
-                "time batch channel height width -> batch (time channel) height width",
+                "batch time channel height width -> batch (time channel) height width",
             )
 
         x = self.encoder(x)

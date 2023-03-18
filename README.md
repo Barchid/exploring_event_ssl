@@ -45,4 +45,4 @@ python train.py --encoder1="snn" --encoder2="snn" --dataset="dvsgesture" --edas=
 
 The best checkpoint file will be saved in `experiments/`.
 
-The bash script to run all training experiments is in `trainings.sh`
+The bash script to run all self-supervised pretraining experiments is in `trainings.sh . Performance on the linear evaluation protocol are logged as well during training.

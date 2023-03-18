@@ -27,7 +27,7 @@ class EdaDistribution:
         trans_a = []
         trans_b = []
 
-        representation = get_frame_representation(sensor_size, timesteps, dataset=dataset)
+        representation = get_frame_representation(sensor_size, timesteps)
 
         # BEFORE TENSOR TRANSFORMATION
         if "background_activity" in transforms_list:

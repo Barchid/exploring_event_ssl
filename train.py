@@ -177,8 +177,5 @@ def get_args():
 
 
 if __name__ == "__main__":
-    pl.seed_everything(1234, workers=True)
-
     args = get_args()
-
     main(args)

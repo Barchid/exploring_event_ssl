@@ -95,35 +95,16 @@ class CustomToFrame:
             sensor_size = get_sensor_size(events)
         else:
             sensor_size = self.sensor_size
-
-        if len(events) // self.event_count >= self.timesteps:
-            x = functional.to_frame_numpy(
-                events=events,
-                sensor_size=sensor_size,
-                time_window=None,
-                event_count=self.event_count,
-                n_time_bins=None,
-                n_event_bins=None,
-                overlap=0.0,
-                include_incomplete=False,
-            )
-
-            if x.shape[0] > self.timesteps:
-                gap = int((x.shape[0] - self.timesteps) / 2)
-                return x[gap : gap + self.timesteps]
-            else:
-                return x
-        else:
-            return functional.to_frame_numpy(
-                events=events,
-                sensor_size=sensor_size,
-                time_window=None,
-                event_count=None,
-                n_time_bins=None,
-                n_event_bins=self.timesteps,
-                overlap=0.0,
-                include_incomplete=False,
-            )
+        return functional.to_frame_numpy(
+            events=events,
+            sensor_size=sensor_size,
+            time_window=None,
+            event_count=None,
+            n_time_bins=self.timesteps,
+            n_event_bins=None,
+            overlap=0.0,
+            include_incomplete=False,
+        )
 
 
 @dataclass(frozen=True)
